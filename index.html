@@ -5,7 +5,7 @@
     <title>Saint Patrick – Project 3 DJ World</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- A-Frame -->
+    
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
 
     <style>
@@ -44,32 +44,25 @@
   </head>
 
   <body>
-    <!-- Overlay UI text -->
     <div id="ui-overlay">
       <h1>Saint Patrick’s Floating Rave World</h1>
       <p>WASD to move • Click + drag to look around</p>
     </div>
 
     <a-scene renderer="antialias: true; colorManagement: true">
-      <!-- ASSETS: MODELS + BACKGROUND + AUDIO -->
       <a-assets>
-        <!-- DJ booth model -->
         <a-asset-item id="djBoothModel" src="models/djbooth.gltf"></a-asset-item>
 
-        <!-- Disco ball model -->
         <a-asset-item id="discoModel" src="models/disco_ball.gltf"></a-asset-item>
 
-        <!-- Galactic background -->
         <img id="spaceTex" src="images/GalacticCenter.png" />
 
-        <!-- Audio track -->
         <audio
           id="mainTrack"
           src="audio/SpotiDownloader.com - House x Pressure - Matroda.mp3"
         ></audio>
       </a-assets>
 
-      <!-- CAMERA RIG -->
       <a-entity id="rig" position="0 1.6 5">
         <a-entity
           camera
@@ -78,14 +71,12 @@
         ></a-entity>
       </a-entity>
 
-      <!-- FLOATING STAGE PLATFORM -->
       <a-entity
         geometry="primitive: cylinder; radius: 4; height: 0.25"
         material="color: #151528; metalness: 0.4; roughness: 0.2"
         position="0 0 0"
       ></a-entity>
 
-      <!-- GLOWING EDGE RING -->
       <a-ring
         position="0 0.01 0"
         rotation="-90 0 0"
@@ -94,7 +85,6 @@
         material="color: #00ffcc; emissive: #00ffcc; emissiveIntensity: 0.6; metalness: 0.2; roughness: 0.1"
       ></a-ring>
 
-      <!-- DJ BOOTH: centered (visually), rotated, with positional audio -->
       <a-entity id="dj-booth-wrapper" position="0 0.8 0">
         <a-entity
           id="dj-booth"
@@ -106,7 +96,6 @@
         ></a-entity>
       </a-entity>
 
-      <!-- DISCO BALL -->
       <a-entity
         id="disco-ball"
         gltf-model="#discoModel"
@@ -115,7 +104,6 @@
         animation="property: rotation; to: 0 360 0; loop: true; dur: 6000; easing: linear"
       ></a-entity>
 
-      <!-- LEFT SPEAKER -->
       <a-entity id="left-speaker" position="-2.4 1.2 -1.2">
         <a-box
           depth="0.6"
@@ -124,7 +112,6 @@
           material="color: #111; metalness: 0.3; roughness: 0.4"
         ></a-box>
 
-        <!-- Glow circles -->
         <a-circle
           position="0 0.5 0.31"
           radius="0.33"
@@ -137,7 +124,6 @@
         ></a-circle>
       </a-entity>
 
-      <!-- RIGHT SPEAKER -->
       <a-entity id="right-speaker" position="2.4 1.2 -1.2">
         <a-box
           depth="0.6"
@@ -146,7 +132,6 @@
           material="color: #111; metalness: 0.3; roughness: 0.4"
         ></a-box>
 
-        <!-- Glow circles -->
         <a-circle
           position="0 0.5 0.31"
           radius="0.33"
@@ -159,7 +144,6 @@
         ></a-circle>
       </a-entity>
 
-      <!-- EQ BARS (behind booth) -->
       <a-entity id="eq-bars" position="0 0.25 -2.3">
         <a-box
           depth="0.4"
@@ -198,17 +182,14 @@
         ></a-box>
       </a-entity>
 
-      <!-- LIGHTING -->
       <a-entity light="type: ambient; color: #555"></a-entity>
 
-      <!-- Spotlight -->
       <a-entity
         light="type: spot; intensity: 1.2; angle: 40; penumbra: 0.4; color: #88ccff"
         position="0 6 2"
         animation="property: rotation; to: 0 360 0; loop: true; dur: 10000; easing: linear"
       ></a-entity>
 
-      <!-- Accent lights -->
       <a-entity
         light="type: point; intensity: 0.8; distance: 6; color: #00ffcc"
         position="-1.8 1.5 -1.5"
@@ -218,11 +199,9 @@
         position="1.8 1.5 -1.5"
       ></a-entity>
 
-      <!-- SPACE BACKGROUND SKY -->
       <a-sky src="#spaceTex" rotation="0 -90 0"></a-sky>
     </a-scene>
 
-    <!-- MODEL CREDIT (for CC-BY license) -->
     <!--
       This work is based on "DJ BOOTH"
       https://sketchfab.com/3d-models/dj-booth-15be961c0b4f446f988b77fa7693bde2
